@@ -49,7 +49,7 @@ const tweet = new SlashCommandBuilder()
     .setName("tweet")
     .setDescription("envoie le dernier tweet");
 
-client.on("interactionCreate", interaction => {
+Client.on("interactionCreate", interaction => {
     if(interaction.isCommand()){
         if(interaction.commandName === "tweet"){
             chatPost(tweet.text, tweet.user.screen_name, `https://twitter.com/${tweet.user.screen_name}/status/${tweet.id_str}`, tweet.created_at, tweet.user.profile_image_url, media);
