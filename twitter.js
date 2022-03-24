@@ -18,7 +18,7 @@ dClient.login(process.env.token);
 
 dClient.on('ready', () => {
     console.log(`TWITTER : Connected to Discord as ${dClient.user.tag}`);
-    client.guilds.cache.get('955951432031416350').commands.create(tweet);
+    dClient.guilds.cache.get('955951432031416350').commands.create(tweet);
 });
 
 t.on('tweet', function (tweet) {
