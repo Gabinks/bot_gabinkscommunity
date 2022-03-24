@@ -14,7 +14,7 @@ const t = new Twit({
     token_secret: config.twitterAccessTokenSecret
 });
 const dClient = new Client({intents: 32767});
-dClient.login();
+dClient.login(process.env.token);
 
 dClient.on('ready', () => {
     console.log(`TWITTER : Connected to Discord as ${dClient.user.tag}`);

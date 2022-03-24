@@ -15,7 +15,7 @@ const data = new SlashCommandBuilder()
     .setName("ping")
     .setDescription("renvoie pong");
 
-client.login();
+client.login(process.env.token);
 
 client.on('ready', () => {
     client.user.setActivity(activity, {
