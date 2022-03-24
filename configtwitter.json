@@ -1,0 +1,15 @@
+{
+    "discordBotToken": "OTU2MTcwNjE3MjY1MTkzMTQy.YjsVRw.MacUCmwfj6w1Yz3XAmbl_wsfINA",
+    "twitterConsumerKey": "cbcmp2r7JZAXTYDc8p92dOzcS",
+    "twitterConsumerSecret": "eEuBWUgfxsXPZh4uI3OoQhWoOqOBmH02wB5GWBEDIVHPBRob2q",
+    "twitterAccessTokenKey": "1082004520866074629",
+    "twitterAccessTokenSecret": "XuTMvdM8D0CPHbNxX0yO7vHF06f2cmDLuHns7wlxPZtl5",
+    "following": [
+      ""
+    ],
+    "channelsToPost": [
+      "956534288998879292"
+    ],
+    "title": "New Tweet",
+    "colour": "#1A91DA"
+  }
