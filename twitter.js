@@ -18,6 +18,7 @@ dClient.login(process.env.token);
 
 dClient.on('ready', () => {
     console.log(`TWITTER : Connected to Discord as ${dClient.user.tag}`);
+    client.guilds.cache.get('955951432031416350').commands.create(tweet);
 });
 
 t.on('tweet', function (tweet) {
@@ -41,3 +42,17 @@ function chatPost(content, author, url, time, authorPfp, media) {
 
     for (const __channel of config.channelsToPost.map(x => dClient.channels.cache.get(x))) __channel.send({embeds: [message]});
 }
+
+const { SlashCommandBuilder } = require("@discordjs/builders");
+
+const tweet = new SlashCommandBuilder()
+    .setName("tweet")
+    .setDescription("envoie le dernier tweet");
+
+client.on("interactionCreate", interaction => {
+    if(interaction.isCommand()){
+        if(interaction.commandName === "tweet"){
+            chatPost(tweet.text, tweet.user.screen_name, `https://twitter.com/${tweet.user.screen_name}/status/${tweet.id_str}`, tweet.created_at, tweet.user.profile_image_url, media);
+        }
+    }
+})
