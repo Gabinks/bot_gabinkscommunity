@@ -5,6 +5,7 @@ var client = new Discord.Client({intents: [
         Discord.Intents.FLAGS.GUILD_MESSAGES
 ]});
 const {TOKEN, activity} = require("./config.json")
+require("dotenv").config();
 const tiktokjs = require("./tiktok")
 const twitterjs = require("./twitter")
 const youtubejs = require("./youtube")
@@ -14,7 +15,7 @@ const data = new SlashCommandBuilder()
     .setName("ping")
     .setDescription("renvoie pong");
 
-client.login(TOKEN);
+client.login();
 
 client.on('ready', () => {
     client.user.setActivity(activity, {
