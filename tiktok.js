@@ -1,3 +1,4 @@
+require('dotenv').config();
 const Database = require('easy-json-database')
 const db = new Database('./database.json')
 
@@ -9,9 +10,8 @@ var client = new Discord.Client({intents: [
 
 const tiktok = require('tiktok-scraper')
 const config = require('./config.json')
-require("dotenv").config();
 
-client.login()
+client.login();
 
 //const resolveID = async () => (await tiktok.getUserProfileInfo(tiktokAccount, { proxy: 'socks5://192.169.244.80:11514' })).user.id
 //const resolveID = async () => (await tiktok.getUserProfileInfo(tiktokAccount, { sessionList: ['sid_tt=d360f5623239ac9d97df4a8d0ea85b67;'] })).user.id
