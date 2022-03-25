@@ -5,7 +5,7 @@ var client = new Discord.Client({intents: [
         Discord.Intents.FLAGS.GUILD_MESSAGES
 ]});
 require("dotenv").config();
-//const tiktokjs = require("./tiktok")
+const tiktokjs = require("./tiktok")
 const twitterjs = require("./twitter")
 const youtubejs = require("./youtube")
 const twitchjs = require("./twitch")
@@ -26,7 +26,7 @@ client.on('ready', () => {
     console.log("CORE : Started")
     //client.application.commands;.create(data);
     client.guilds.cache.get('955951432031416350').commands.create(data);
-    //tiktokjs;
+    tiktokjs;
     twitterjs;
     youtubejs;
     twitchjs;
