@@ -95,3 +95,6 @@ var Check = new CronJob(process.env.cron,async function () {
         }
     })
 });
+
+//login
+client.login(process.env.token);
