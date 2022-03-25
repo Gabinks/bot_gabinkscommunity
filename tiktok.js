@@ -14,7 +14,7 @@ client.login(process.env.token);
 
 //const resolveID = async () => (await tiktok.getUserProfileInfo(tiktokAccount, { proxy: 'socks5://192.169.244.80:11514' })).user.id
 //const resolveID = async () => (await tiktok.getUserProfileInfo(tiktokAccount, { sessionList: ['sid_tt=d360f5623239ac9d97df4a8d0ea85b67;'] })).user.id
-const resolveID = async () => (await tiktok.getUserProfileInfo(config.tiktokAccount, { proxyFile: ['./proxy'] })).user.id
+const resolveID = async () => (await tiktok.getUserProfileInfo(process.env.tiktokAccount, { proxyFile: ['./proxy'] })).user.id
 
 const sync = async (userID) => {
     const cache = db.get('cache')
