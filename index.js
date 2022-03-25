@@ -21,7 +21,7 @@ client.on('ready', () => {
         type: "STREAMING",
         url: "https://www.twitch.tv/gabinbinks"
       });
-    console.log("Started")
+    console.log("CORE : Started")
     //client.application.commands;.create(data);
     client.guilds.cache.get('955951432031416350').commands.create(data);
     tiktokjs;
