@@ -9,7 +9,6 @@ var client = new Discord.Client({intents: [
 ]});
 
 const tiktok = require('tiktok-scraper')
-const config = require('./config.json')
 
 client.login(process.env.token);
 

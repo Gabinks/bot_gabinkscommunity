@@ -4,7 +4,6 @@ var client = new Discord.Client({intents: [
         Discord.Intents.FLAGS.GUILDS,
         Discord.Intents.FLAGS.GUILD_MESSAGES
 ]});
-const {TOKEN, activity} = require("./config.json")
 require("dotenv").config();
 const tiktokjs = require("./tiktok")
 const twitterjs = require("./twitter")
@@ -18,7 +17,7 @@ const data = new SlashCommandBuilder()
 client.login(process.env.token);
 
 client.on('ready', () => {
-    client.user.setActivity(activity, {
+    client.user.setActivity(process.env.activity, {
         type: "STREAMING",
         url: "https://www.twitch.tv/gabinbinks"
       });

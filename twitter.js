@@ -3,8 +3,6 @@ const Twit = require("node-tweet-stream");
 const fs = require("fs");
 require("dotenv").config();
 
-const config = JSON.parse(fs.readFileSync("./configtwitter.json", "utf8"));
-
 const t = new Twit({
     consumer_key: process.env.twitterConsumerKey,
     consumer_secret: process.env.twitterConsumerSecret,
