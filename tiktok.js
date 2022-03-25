@@ -40,7 +40,7 @@ const sync = async (userID) => {
         }
         db.set('cache', newPostsSorted.map((post) => post.id))
     }catch (error){
-        console.error('1TIKTOK ' + error)
+        console.error('TIKTOK : ' + error)
     }
 }
 
@@ -50,16 +50,5 @@ client.on('ready', async () => {
         sync(userID)
         setInterval(() => sync(userID), 120 * 1000)
     }catch (error){
-        console.log('2TIKTOK ' + error)
     }
-})
-
-const { SlashCommandBuilder } = require("@discordjs/builders");
-
-const testtiktok = new SlashCommandBuilder()
-    .setName("testtiktok")
-    .setDescription("affiche une embed tiktok");
-    
-client.on('ready', () => {
-    client.guilds.cache.get('955951432031416350').commands.create(testtiktok);
 })
