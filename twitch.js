@@ -17,7 +17,7 @@ client.on('ready', () => {
 });
 
 //function that will run the checks
-var Check = new CronJob(config.cron,async function () {
+var Check = new CronJob(process.env.cron,async function () {
     //const tempData = require("dotenv").config();
 
     process.env.channels.map(async function (chan, i) {
