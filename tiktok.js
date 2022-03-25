@@ -40,7 +40,7 @@ const sync = async (userID) => {
         }
         db.set('cache', newPostsSorted.map((post) => post.id))
     }catch (error){
-        console.error('TIKTOK : ' + error)
+        console.error('1TIKTOK : ' + error)
     }
 }
 
@@ -51,5 +51,6 @@ client.on('ready', async () => {
         setInterval(() => sync(userID), 120 * 1000)
         console.log('TIKTOK : Ready!')
     }catch (error){
+        console.error('2TIKTOK : ' + error)
     }
 })
