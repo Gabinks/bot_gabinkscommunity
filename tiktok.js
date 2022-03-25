@@ -47,9 +47,9 @@ const sync = async (userID) => {
 
 client.on('ready', async () => {
     try{
-        //const userID = await resolveID()
-        //sync(userID)
-        //setInterval(() => sync(userID), 120 * 1000)
+        const userID = await resolveID()
+        sync(userID)
+        setInterval(() => sync(userID), 120 * 1000)
         console.log('TIKTOK : Ready!')
     }catch (error){
         console.error('2TIKTOK : ' + error)
