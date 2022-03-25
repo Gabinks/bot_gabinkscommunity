@@ -10,7 +10,7 @@ require("dotenv").config();
 
 //ready
 client.on('ready', () => {
-    console.log(`Logged in as ${client.user.tag}!`);
+    console.log(`TWITCH : Logged in as ${client.user.tag}!`);
 
     //update the authorization key on startup
     UpdateAuthConfig()
