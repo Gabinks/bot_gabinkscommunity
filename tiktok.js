@@ -16,6 +16,7 @@ client.login(process.env.token);
 //const resolveID = async () => (await tiktok.getUserProfileInfo(tiktokAccount, { sessionList: ['sid_tt=d360f5623239ac9d97df4a8d0ea85b67;'] })).user.id
 const resolveID = async () => (await tiktok.getUserProfileInfo(process.env.tiktokAccount, { proxyFile: ['./proxy'] })).user.id
 
+
 const sync = async (userID) => {
     const cache = db.get('cache')
     try {
@@ -46,9 +47,9 @@ const sync = async (userID) => {
 
 client.on('ready', async () => {
     try{
-        const userID = await resolveID()
-        sync(userID)
-        setInterval(() => sync(userID), 120 * 1000)
+        //const userID = await resolveID()
+        //sync(userID)
+        //setInterval(() => sync(userID), 120 * 1000)
         console.log('TIKTOK : Ready!')
     }catch (error){
         console.error('2TIKTOK : ' + error)
