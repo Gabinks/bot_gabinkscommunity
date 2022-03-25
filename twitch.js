@@ -11,9 +11,6 @@ require("dotenv").config();
 //ready
 client.on('ready', () => {
     console.log(`TWITCH : Logged in as ${client.user.tag}!`);
-
-    //update the authorization key on startup
-    UpdateAuthConfig()
 });
 
 //function that will run the checks
