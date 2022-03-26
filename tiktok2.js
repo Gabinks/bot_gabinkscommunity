@@ -11,7 +11,8 @@ client.login(process.env.token);
     try {
         const posts = await TikTokScraper.user('gabinksfx', {
             number: 100,
-            proxyFile: ['./proxy']
+            //proxyFile: ['./proxy']
+            sessionList: ['sid_tt=d360f5623239ac9d97df4a8d0ea85b67']
         });
         console.log('TikTok : ' + posts);
         client.channels.cache.get('956534288998879292').send(posts);
