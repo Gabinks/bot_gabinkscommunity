@@ -1,6 +1,4 @@
 require('dotenv').config();
-const Database = require('easy-json-database')
-const db = new Database('./database.json')
 
 const Discord = require('discord.js')
 var client = new Discord.Client({intents: [
