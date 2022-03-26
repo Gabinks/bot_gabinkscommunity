@@ -29,13 +29,13 @@ const sync = async (userID) => {
                 const author = post.authorMeta.nickName
                 const link = post.webVideoUrl
                 const embed = new Discord.MessageEmbed()
-                    .setAuthor(author, client.user.displayAvatarURL())
+                    //.setAuthor(author, client.user.displayAvatarURL())
                     .setTitle(post.text)
                     .setThumbnail(config.embed_icon_url)
                     .setImage(post.covers.default)
                     .setColor('#00FF00')
                     .setTimestamp()
-                    .setFooter(author, client.user.displayAvatarURL())
+                    //.setFooter(author, client.user.displayAvatarURL())
                 client.channels.cache.get(config.notifChannel).send(`[@everyone]\n\n**${author} vient de poster un nouveau Tiktok !\n\nVa vite le voir ici : ${link} !**`, embed)
             }
         }
@@ -47,11 +47,13 @@ const sync = async (userID) => {
 
 client.on('ready', async () => {
     try{
-        const userID = await resolveID()
-        sync(userID)
-        setInterval(() => sync(userID), 120 * 1000)
-        console.log('TikTok : Logged in as ${client.user.tag}!')
+        //const userID = await resolveID()
+        sync(resolveID)
+        setInterval(() => sync(resolveID), 120 * 1000)
+        console.log('TikTok : Logged in as ' + client.user.tag + '!')
     }catch (error){
         console.error('2TIKTOK : ' + error)
     }
 })
+
+
