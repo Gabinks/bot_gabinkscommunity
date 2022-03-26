@@ -1,3 +1,3 @@
 {
-    "DATABASE": "mongodb+srv://Gabinks:Buignet123@cluster0.chbie.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+    "cache": "mongodb+srv://Gabinks:Buignet123@cluster0.chbie.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 }

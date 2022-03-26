@@ -50,7 +50,7 @@ client.on('ready', async () => {
         const userID = await resolveID()
         sync(userID)
         setInterval(() => sync(userID), 120 * 1000)
-        console.log('TIKTOK : Ready!')
+        console.log('TikTok : Logged in as ${client.user.tag}!')
     }catch (error){
         console.error('2TIKTOK : ' + error)
     }
