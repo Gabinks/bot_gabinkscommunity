@@ -9,7 +9,7 @@ client.login(process.env.token);
 
 (async () => {
     try {
-        const posts = await TikTokScraper.user(process.env.token, {
+        const posts = await TikTokScraper.user('gabinksfx', {
             number: 100,
             proxyFile: ['./proxy']
         });
