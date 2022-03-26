@@ -18,13 +18,11 @@ const resolveID = async () => (await tiktok.getUserProfileInfo(process.env.tikto
 
 
 const sync = async (userID) => {
-    const cache = db.get('cache')
     try {
         const { collector : newPosts } = await tiktok.user(userID)
         if (newPosts.length === 0) return
         const newPostsSorted = newPosts.sort((a, b) => b.createTime - a.createTime).slice(0, 10)
-        if (cache) {
-            const post = newPostsSorted.filter((post) => !cache.includes(post.id))[0]
+            const post = newPostsSorted.filter(post)
             if (post && (post.createTime > ((Date.now() - 24 * 60 * 60 * 1000) / 1000))) {
                 const author = post.authorMeta.nickName
                 const link = post.webVideoUrl
@@ -38,8 +36,6 @@ const sync = async (userID) => {
                     //.setFooter(author, client.user.displayAvatarURL())
                 client.channels.cache.get(config.notifChannel).send(`[@everyone]\n\n**${author} vient de poster un nouveau Tiktok !\n\nVa vite le voir ici : ${link} !**`, embed)
             }
-        }
-        db.set('cache', newPostsSorted.map((post) => post.id))
     }catch (error){
         console.error('1TIKTOK : ' + error)
     }
