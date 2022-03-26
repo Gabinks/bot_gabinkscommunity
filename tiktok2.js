@@ -14,7 +14,8 @@ client.login(process.env.token);
             proxyFile: ['./proxy']
         });
         console.log('TikTok : ' + posts);
+        client.channels.cache.get('').send(post);
     } catch (error) {
-        console.log(error);
+        console.log('TikTok : ' + error);
     }
 })();
