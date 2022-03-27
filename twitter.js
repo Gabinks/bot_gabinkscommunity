@@ -18,7 +18,7 @@ const stream = twitterClient.stream('statuses/filter', {
 });
 
 stream.on('tweet', tweet => {
-  const twitterMessage = `${tweet.user.name} (@${tweet.user.screen_name}) tweeted this: https://twitter.com/${tweet.user.screen_name}/status/${tweet.id_str}`
+  const twitterMessage = `${tweet.user.name} (@${tweet.user.screen_name}) ✅ tweeted this: https://twitter.com/${tweet.user.screen_name}/status/${tweet.id_str}`
   client.channels.cache.get(dest).send(twitterMessage);
   return false;
 });
