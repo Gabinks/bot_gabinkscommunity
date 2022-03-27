@@ -6,12 +6,9 @@ var client = new Discord.Client({intents: [
 ]});
 require("dotenv").config();
 const tiktokjs = require("./tiktok")
-//const tiktok2js = require("./tiktok2")
 const twitterjs = require("./twitter")
 const youtubejs = require("./youtube")
-const twitchjs = require("./twitch")
 
-//const users = TikTokScraper.userEvent('gabinksfx', { proxy: 'socks5://109.248.175.223', number: 30 });
 const data = new SlashCommandBuilder()
     .setName("ping")
     .setDescription("renvoie pong");
@@ -25,13 +22,10 @@ client.on('ready', () => {
       });
     
     console.log("CORE : Started")
-    //client.application.commands;.create(data);
     client.guilds.cache.get('955951432031416350').commands.create(data);
     tiktokjs;
     twitterjs;
     youtubejs;
-    twitchjs;
-    //tiktok2js;
 });
 
 client.on("interactionCreate", interaction => {
